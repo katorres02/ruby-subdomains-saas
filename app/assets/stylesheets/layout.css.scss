@@ -1,0 +1,16 @@
+body {
+  padding-top: 20px;
+}
+
+#flash-notice {
+  @extend .alert !optional;
+  @extend .alert-success !optional;
+}
+#flash-error, #flash-alert {
+  @extend .alert !optional;
+  @extend .alert-danger !optional;
+}
+#flash-warning {
+  @extend .alert !optional;
+  @extend .alert-warning !optional;
+}
