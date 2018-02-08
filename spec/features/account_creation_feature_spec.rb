@@ -5,10 +5,10 @@ describe 'account creation' do
 		visit root_path
 		click_link 'Create Account'
 
-		#fill_in 'Name', with: 'Carlos'
-		#fill_in 'Email', with: 'carlos@mail.com'
-		#fill_in 'Password', with: 'pw'
-		#fill_in 'Password Confirmation', with: 'pw'
+		fill_in 'Name', with: 'Carlos'
+		fill_in 'Email', with: 'carlos@mail.com'
+		fill_in 'Password', with: 'pw'
+		fill_in 'Password confirmation', with: 'pw'
 		fill_in 'Subdomain', with: 'test_subdomain'
 
 		click_button 'Create Account'
