@@ -2,15 +2,19 @@ body {
   padding-top: 20px;
 }
 
-#flash-notice {
+#flash_notice {
   @extend .alert !optional;
   @extend .alert-success !optional;
 }
-#flash-error, #flash-alert {
+#flash_error, #flash_alert {
   @extend .alert !optional;
   @extend .alert-danger !optional;
 }
-#flash-warning {
+#flash_warning {
   @extend .alert !optional;
   @extend .alert-warning !optional;
+}
+
+.navbar .right-buttons {
+  margin-right: 15px;
 }
