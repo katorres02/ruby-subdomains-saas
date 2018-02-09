@@ -29,5 +29,6 @@ RSpec.configure do |config|
     Apartment::Tenant.reset
 
     DatabaseCleaner.clean
+    Capybara.app_host = 'http://example.com'
   end
 end
