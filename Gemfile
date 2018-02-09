@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'devise_invitable', '~> 1.7.0'
 gem 'apartment'
 
 group :development, :test do
@@ -50,6 +51,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'letter_opener'
+  gem 'email_spec'
 end
 
 group :development do

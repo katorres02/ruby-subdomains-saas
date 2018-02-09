@@ -10,6 +10,7 @@ require 'capybara/rspec'
 require 'support/factory_bot'
 require 'support/database_cleaner'
 require 'support/macros'
+require 'email_spec'
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -40,6 +41,10 @@ ActiveRecord::Migration.maintain_test_schema!
 Capybara.app_host = 'http://example.com'
 
 RSpec.configure do |config|
+
+  config.include EmailSpec::Helpers
+  config.include EmailSpec::Matchers
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

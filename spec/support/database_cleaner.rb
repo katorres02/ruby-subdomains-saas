@@ -30,5 +30,6 @@ RSpec.configure do |config|
 
     DatabaseCleaner.clean
     Capybara.app_host = 'http://example.com'
+    reset_mailer
   end
 end
