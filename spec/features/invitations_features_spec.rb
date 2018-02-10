@@ -14,7 +14,14 @@ describe 'invitations' do
     expect(page).to have_content user.name
     expect(page).to have_content user.email
     expect(page).to have_selector '.glyphicon-ok'
-  end 
+  end
+
+  it 'validates email' do
+    fill_in 'Email', with: 'wrong'
+    click_button 'Invite User'
+    expect(page).to have_content 'Send Invitation'
+    expect(page).to have_content 'invalid'
+  end
 
   describe 'when user is invited' do
     before do
