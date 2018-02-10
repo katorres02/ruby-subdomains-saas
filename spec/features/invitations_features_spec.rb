@@ -27,17 +27,28 @@ describe 'invitations' do
       expect(page).to have_content 'Invitation Pending'
     end
 
-    it 'allows user to accept invitation' do
-      click_link 'Sign out'
-      open_email 'carlosandrestorres28@gmail.com'
-      visit_in_email 'Accept invitation'
+    context 'user accepts invitation' do
+      before do
+        click_link 'Sign out'
+        open_email 'carlosandrestorres28@gmail.com'
+        visit_in_email 'Accept invitation'
 
-      fill_in 'Name', with: 'Carlos'
-      fill_in 'Password', with: 'pw'
-      fill_in 'Password confirmation', with: 'pw'
-      click_button 'Set my password'
+        fill_in 'Name', with: 'Andres'
+        fill_in 'Password', with: 'pw'
+        fill_in 'Password confirmation', with: 'pw'
+        click_button 'Set my password'
+      end
 
-      expect(page).to have_content 'You are now signed in'
+      it 'confirms account creation' do
+        expect(page).to have_content 'Your password was set successfully'
+      end
+
+      it 'shows a checkmark on the users page' do
+        visit users_path
+        within('tr', text: 'Andres') do
+          expect(page).to have_selector '.glyphicon-ok'
+        end
+      end
     end
   end
 end
