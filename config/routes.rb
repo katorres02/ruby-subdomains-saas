@@ -4,23 +4,12 @@ class SubdomainIsPresent
   end
 end
 
-class SubdomainInBlank 
-  def self.matches?(request)
-    request.subdomain.blank?
-  end
-end
-
 Rails.application.routes.draw do
-# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'tenants#index'
+  resources :tenants, only: [:index, :create]
 
   constraints(SubdomainIsPresent) do
-    root 'projects#index', as: :subdomain_root 
-    devise_for :users
-    resources :users, only: :index
-  end
-
-  constraints(SubdomainInBlank) do
-    root 'welcomes#index'
-    resources :accounts, only: [:new, :create] 
+    resources :tasks, only: [:index, :create, :edit]
   end
 end

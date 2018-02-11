@@ -1,0 +1,24 @@
+<div class="col-md-12">
+  <div class="jumbotron">
+    <p>These elements are assigned only to the subdomain <strong><%=request.subdomain%></strong>.</p>
+    <p>If you see the url of this page you can confirm that the subdomin is presente there. <em>http://<strong><%=request.subdomain%></strong>.me.localhost:3000/tasks</em></p>
+  </div>
+</div>
+
+
+<div class="col-md-12">
+  <%= form_for(@task, html: { class: 'form-inline' }) do |f| %>
+    <%= f.text_field :name, placeholder: 'Name', class: 'form-control', required: true %>
+    <%= f.submit 'Create', class: 'btn btn-primary'%>
+  <%end%>
+  
+  <br />
+  
+  <div>
+    <ul class="list-group">
+      <% @tasks.each do |task| %>
+        <li class="list-group-item"><%= task.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

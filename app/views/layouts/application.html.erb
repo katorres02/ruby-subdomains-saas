@@ -8,29 +8,20 @@
 </head>
 <body>
 
-<header class="container">
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <%= link_to 'Tracker', root_path, class: 'navbar-brand' %>
-    </div>
-    <div class="pull-right right-buttons">
-      <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'btn btn-default navbar-btn' %>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Users', users_path %></li>
-        </ul>
-      <% end %>
-    </div>
-  </nav>
-</header>
+  <header class="container">
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <%= link_to 'SUBDOMAINS', root_url(subdomain: false), class: 'navbar-brand' %>
+      </div>
+    </nav>
+  </header>
 
-<div class="container">
-  <%= flash_messages if show_layout_flash? %>
+  <div class="container">
 
-  <div class="row">
-    <%= yield %>
+    <div class="row">
+      <%= yield %>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
