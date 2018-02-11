@@ -5,9 +5,7 @@ RSpec.configure do |config|
     # Truncating doesn't drop schemas, ensure we're clean here, app *may not* exist
     Apartment::Tenant.drop('app') rescue nil
     # Create the default tenant for our tests
-    user = User.create(name: 'test', email: 't@ma.com', password: 'pw')
-    Account.create(subdomain: 'app', owner: user)
-    Apartment::Tenant.create('app')
+    Tenant.create(name: 'app')
   end
 
   config.before(:each) do
@@ -30,6 +28,5 @@ RSpec.configure do |config|
 
     DatabaseCleaner.clean
     Capybara.app_host = 'http://example.com'
-    reset_mailer
   end
 end

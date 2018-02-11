@@ -1,3 +1,4 @@
+=begin
 require 'rails_helper'
 
 describe 'account creation' do
@@ -40,3 +41,4 @@ describe 'account creation' do
 		click_button 'Create Account'
 	end
 end
+=end

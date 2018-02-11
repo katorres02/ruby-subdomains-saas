@@ -1,3 +1,4 @@
+=begin
 require 'rails_helper'
 
 describe 'user authentication' do
@@ -36,3 +37,4 @@ describe 'user authentication' do
     expect(page).to have_content('Signed out successfully')
   end
 end
+=end

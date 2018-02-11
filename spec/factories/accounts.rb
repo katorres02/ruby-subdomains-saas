@@ -1,3 +1,4 @@
+=begin
 FactoryBot.define do
   sequence(:subdomain) { |n| "subdomain#{n}" }
   factory :account do
@@ -15,3 +16,4 @@ FactoryBot.define do
     end
   end
 end
+=end

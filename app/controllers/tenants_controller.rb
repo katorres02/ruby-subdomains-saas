@@ -1,18 +1,13 @@
 class TenantsController < ApplicationController
-  def index
-    # TODO show errors
+  def index 
     @tenant = Tenant.new
     tenants
   end
 
   def create
     @tenant = Tenant.new(tenant_params)
-    if @tenant.save
-      redirect_to root_path
-    else
-      tenants
-      render 'index'
-    end
+    @tenant.save if @tenant.valid?
+    redirect_to root_path
   end
 
 private

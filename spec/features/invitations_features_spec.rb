@@ -1,3 +1,4 @@
+=begin
 require 'rails_helper'
 
 describe 'invitations' do
@@ -59,3 +60,4 @@ describe 'invitations' do
     end
   end
 end
+=end

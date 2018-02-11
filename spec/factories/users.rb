@@ -1,3 +1,4 @@
+=begin
 FactoryBot.define do
   factory :user do
   	name 'Carlos'
@@ -5,3 +6,4 @@ FactoryBot.define do
     password 'pw'
   end
 end
+=end
